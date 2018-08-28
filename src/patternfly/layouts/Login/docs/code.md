@@ -1,19 +1,13 @@
 ## Overview
 
-Only if needed write a short description with implementation notes. Design and interaction notes are already written on the design specs, don't repeat information.
-
-For example for buttons: Always add a modifier class to add color to the button. Never use the class `.btn` on its own.
-
-## Accessibility
-
-| Attribute | Applied To | Outcome |
-| -- | -- | -- |
-| `role` or `aria` | `pf-l-login` |  accessibility notes. |
-
+The Login layout will place the login page elements in the correct position.
 
 ## Usage
 
 | Class | Applied To | Outcome |
 | -- | -- | -- |
-| `.class-name-here` | `<tags-here>` |  Outcome and remarks. |
-| Example: `.btn` | `<button>` |  Initiates a button. Always use it with a modifier class. |
+| `.pf-l-layout` | `<div>` |  Initializes the login layout |
+| `.pf-l-layout__container` | `<div>` |  Correctly positions the login structure |
+| `.pf-l-layout__header` | `<header>` |  Positions the login header |
+| `.pf-l-layout__main` | `<main>` |  Positions the login main area |
+| `.pf-l-layout__footer` | `<footer>` |  Positions the login footer |
