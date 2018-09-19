@@ -14,31 +14,106 @@
       {{/ content}}
     {{/login-header}}
 
-    {{! LoginBox and form }}
+    {{! Login Box and form }}
     {{#> login-main}}
 
       {{#> login-box}}
-      
+
+        {{! Login Box Header }}
         {{#> login-box-header}}
-          {{#> title titleType="h1" pf-c-title--Modifier="pf-m-3xl"}}
-            Login box title
+          {{#> title titleType="h1" pf-c-title--Modifier="pf-m-3xl pf-u-mb-md"}}
+            Sign in to your account
           {{/title}}
 
-          {{!-- UNSTYLED DROPDOWN GOES HERE --}}
+          {{#> display display--type="inline-flex" display--modifier="pf-u-align-items-center"}}
+            {{#> dropdown id="dropdown-example-collapsed" pf-c-dropdown--HasToggleIcon="true"}}
+              English
+            {{/dropdown}}
+            <p class="pf-u-ml-md">Need an account? <a href="https://www.patternfly.org/">Sign up.</a></p>
+          {{/display}}
         
         {{/login-box-header}}
-        {{#> login-box-body}}
-          Login box body. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure labore ipsa nemo nostrum id culpa atque nulla expedita at! Explicabo aut minima alias. Officia magnam est at omnis iste eius?
 
-         {{!-- FORM GOES HERE --}}
+        {{! Login Box Body }}
+        {{#> login-box-body}}
+
+          {{#> alternative-form-demo}}
+            {{#> form }}
+              {{#> form-group}}
+                {{#> form-label form-label--attribute='for="alt-form-git-repo"' required="true"}}Username{{/form-label}}
+                {{#> form-control pf-c-form-control--modifier="pf-m-form-control-alt" controlType="input" input="true" type="username" id="alt-form-git-repo" name="simple-form-git-repo" required="true"}}{{/form-control}}
+              {{/form-group}}
+              {{#> form-group}}
+                {{#> form-label form-label--attribute='for="alt-form-password"' required="true"}}Password{{/form-label}}
+                {{#> form-control pf-c-form-control--modifier="pf-m-form-control-alt" controlType="input" input="true" type="password" id="alt-form-password" name="alt-form-password" aria-describedby="alt-helper3" required="true"}}{{/form-control}}
+              {{/form-group}}
+              {{#> form-group form-group--modifier="pf-m-action"}}
+                {{#> toolbar}}
+                  {{#> toolbar-group}}
+                    {{#> toolbar-item}}
+                      {{#> button btnClass="pf-m-primary"}}
+                      Sign In
+                    {{/button}}
+                    {{/toolbar-item}}
+                  {{/toolbar-group}}
+                  {{#> toolbar-group toolbar-group--modifier="pf-u-mb-sm"}}
+                    {{#> toolbar-item}}
+                      {{#> check}}
+                        {{#> check-input check-input--attribute='type="checkbox" id="alt-form-checkbox" name="alt-form-checkbox"'}}{{/check-input}}
+                        {{#> check-label check-label--attribute='for="alt-form-checkbox"'}}Keep me signed in for 30 days.{{/check-label}}
+                      {{/check}}
+                    {{/toolbar-item}}
+                  {{/toolbar-group}}
+                {{/toolbar}}
+              {{/form-group}}
+            {{/form}}
+          {{/alternative-form-demo}}
 
         {{/login-box-body}}
 
+        {{! Login Box Footer }}
         {{#> login-box-footer}}
-          Login box footer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure labore ipsa nemo nostrum id culpa atque nulla expedita at! Explicabo aut minima alias. Officia magnam est at omnis iste eius?
 
-         {{!-- SOCIAL BADGES GRID GOES HERE --}}
-          
+          <p class="pf-u-mb-md">Or log in with</p>
+
+          {{#> list list--modifier="pf-m-grid"}}
+            <li>
+              {{#> display display--type="flex" display--modifier="pf-u-align-items-center pf-u-mt-sm pf-u-mb-sm"}}
+                <img src="/assets/images/logo-google.svg" alt="Google logo" />
+                <p class="pf-u-ml-sm">Google</p>
+              {{/display}}
+            </li>
+            <li>
+              {{#> display display--type="flex" display--modifier="pf-u-align-items-center pf-u-mt-sm pf-u-mb-sm"}}
+                <img src="/assets/images/logo-github.svg" alt="GitHub logo" />
+                <p class="pf-u-ml-sm">GitHub</p>
+              {{/display}}
+            </li>
+            <li>
+              {{#> display display--type="flex" display--modifier="pf-u-align-items-center pf-u-mt-sm pf-u-mb-sm"}}
+                <img src="/assets/images/logo-dropbox.svg" alt="Dropbox logo" />
+                <p class="pf-u-ml-sm">Dropbox</p>
+              {{/display}}
+            </li>
+            <li>
+              {{#> display display--type="flex" display--modifier="pf-u-align-items-center pf-u-mt-sm pf-u-mb-sm"}}
+                <img src="/assets/images/logo-facebook.svg" alt="Facebook logo" />
+                <p class="pf-u-ml-sm">Facebook</p>
+              {{/display}}
+            </li>
+            <li>
+              {{#> display display--type="flex" display--modifier="pf-u-align-items-center pf-u-mt-sm pf-u-mb-sm"}}
+                <img class="" src="/assets/images/logo-gitlab.svg" alt="GitLab logo" />
+                <p class="pf-u-ml-sm">GitLab</p>
+              {{/display}}
+            </li>
+            <li>
+              {{#> display display--type="flex" display--modifier="pf-u-align-items-center pf-u-mt-sm pf-u-mb-sm"}}
+                <p class=""><a href="https://www.patternfly.org/">More...</a></p>
+              {{/display}}
+            </li>
+          {{/list}}
+
         {{/login-box-footer}}
 
       {{/login-box}}
@@ -47,7 +122,11 @@
 
     {{! Footer links }}
     {{#> login-footer}}
-        <a href="#">Login Footer</a>
+        {{#> list list--modifier="pf-m-inline"}}
+          <li>Terms of Use</li>
+          <li>Help</li>
+          <li>Privacy Policy</li>
+        {{/list}}
     {{/login-footer}}
 
   {{/login}}
