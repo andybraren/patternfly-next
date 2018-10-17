@@ -23,6 +23,8 @@
   --pf-l-login__main--MarginBottom: var(--pf-global--spacer--lg);
   --pf-l-login__footer--sm--PaddingLeft: var(--pf-global--spacer--md);
   --pf-l-login__footer--sm--PaddingRight: var(--pf-global--spacer--md);
+  --pf-l-login__footer--LinkColor: var(--pf-color-black-100);
+  --pf-l-login__footer--LinkColorHover: var(--pf-global--primary-color--light-100);
 
   display: flex;
   justify-content: center;
@@ -98,5 +100,13 @@
   @media (max-width: $pf-global--breakpoint--sm) {
     padding-right: var(--pf-l-login__footer--sm--PaddingRight);
     padding-left: var(--pf-l-login__footer--sm--PaddingLeft);
+  }
+
+  a {
+    color: var(--pf-l-login__footer--LinkColor);
+  }
+
+  a:hover {
+    color: var(--pf-l-login__footer--LinkColorHover);
   }
 }
